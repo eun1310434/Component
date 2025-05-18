@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.maven.publish)
+    id("maven-publish")
 }
 
 android {
@@ -45,10 +45,19 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 }
 
-mavenPublishing {
-    coordinates(
-        groupId = "com.github.euntaek",
-        artifactId = "ui-component",
-        version = "0.0.1"
-    )
+
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                groupId = "com.github.euntaek"
+                artifactId = "ui-component"
+                version = "0.0.1"
+
+                afterEvaluate {
+                    from(components["release"])
+                }
+            }
+        }
+    }
 }
