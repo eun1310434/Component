@@ -38,6 +38,9 @@ android {
 }
 
 dependencies {
+    implementation(libs.coil.kt.compose)
+    implementation(libs.coil.kt.gif)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.material3.android)
