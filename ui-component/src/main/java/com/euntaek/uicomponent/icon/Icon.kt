@@ -1,4 +1,4 @@
-package com.euntaek.uicomponent
+package com.euntaek.uicomponent.icon
 
 
 import androidx.annotation.DrawableRes
