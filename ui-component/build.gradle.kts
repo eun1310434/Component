@@ -60,7 +60,7 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "com.github.euntaek"
                 artifactId = "ui-component"
-                version = "0.0.4"
+                version = "0.0.5"
 
                 afterEvaluate {
                     from(components["release"])
