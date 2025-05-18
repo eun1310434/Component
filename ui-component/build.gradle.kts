@@ -38,8 +38,13 @@ android {
 }
 
 dependencies {
+    // Image loading
     implementation(libs.coil.kt.compose)
+    implementation(libs.coil.network.okhttp)
     implementation(libs.coil.kt.gif)
+
+    // Image background
+    api(libs.androidx.palette.ktx)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
